@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <title>Login - ReWear</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     body {
@@ -37,10 +43,12 @@
       margin-bottom: 10px;
     }
 
+    /* Main Container */
     main {
       max-width: 500px;
       margin: auto;
       text-align: center;
+      flex: 1;
     }
 
     h2 {
@@ -96,24 +104,24 @@
       color: #62a8ac;
       text-decoration: none;
     }
-
     footer {
       text-align: center;
-      margin-top: 40px;
       color: #888;
       font-size: 0.9rem;
+      padding: 10px 0;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>👚 ReWear</h1>
-    <p>Welcome back! Log in to Exchange sustainably.</p>
+    <p>Welcome back! Log in to exchange sustainably.</p>
   </header>
 
   <main>
     <h2>Login</h2>
-    <form action="php/login.php" method="POST">
+    <form action="login.php" method="POST">
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" placeholder="Enter your email" required />
 
@@ -121,15 +129,17 @@
       <input type="password" id="password" name="password" placeholder="Enter your password" required />
 
       <button type="submit">Login</button>
-    </form>
-
-    <p style="margin-top: 15px;">
+       <p style="margin-top: 15px;">
       Don't have an account? <a href="register.html">Register here</a>
     </p>
+    </form>
+
+   
   </main>
 
   <footer>
     <p>&copy; 2025 ReWear Community</p>
   </footer>
+
 </body>
 </html>
