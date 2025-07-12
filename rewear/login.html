@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - ReWear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f5f9fc;
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #62a8ac;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+      flex: 1;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    }
+
+    form label {
+      display: block;
+      text-align: left;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    form input[type="email"],
+    form input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #fff;
+      color: #333;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    form button {
+      width: 100%;
+      background-color: #62a8ac;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+
+    form button:hover {
+      background-color: #4d8b8e;
+    }
+
+    p a {
+      color: #62a8ac;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>👚 ReWear</h1>
+    <p>Welcome back! Log in to exchange sustainably.</p>
+  </header>
+
+  <main>
+    <h2>Login</h2>
+    <form action="login.php" method="POST">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+      <button type="submit">Login</button>
+       <p style="margin-top: 15px;">
+      Don't have an account? <a href="signup.html">Sign Up</a>
+    </p>
+    </form>
+
+   
+  </main>
+
+  <footer>
+    <p>&copy;2025 ReWear Community | Built for a sustainable tomorrow</p>
+  </footer>
+
+</body>
+</html>

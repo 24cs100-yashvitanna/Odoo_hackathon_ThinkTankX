@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Uploaded Items - ReWear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f5f9fc;
+      padding: 20px;
+    }
+    .item {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      display: flex;
+      gap: 20px;
+    }
+    img {
+      width: 120px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .info {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🛍️ Approved Listings</h1>
+  <div id="itemList"></div>
+
+  <script>
+    const container = document.getElementById("itemList");
+    const items = JSON.parse(localStorage.getItem("rewearItems")) || [];
+
+    const approved = items.filter(item => item.approved);
+
+    if (approved.length === 0) {
+      container.innerHTML = "<p>No approved items yet.</p>";
+    } else {
+      approved.forEach(item => {
+        container.innerHTML += `
+          <div class="item">
+            <img src="${item.image}" alt="${item.title}" />
+            <div class="info">
+              <h3>${item.title}</h3>
+              <p><strong>Category:</strong> ${item.category}</p>
+              <p><strong>Condition:</strong> ${item.condition}</p>
+              <p>${item.description}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>

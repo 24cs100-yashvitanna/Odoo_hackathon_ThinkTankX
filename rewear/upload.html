@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Upload Item - ReWear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f5f9fc;
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #62a8ac;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    main {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    form {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    }
+
+    form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="file"],
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #fff;
+      color: #333;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    form button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #62a8ac;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #4d8b8e;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📤 Upload Clothing</h1>
+  </header>
+
+  <main>
+    <form action="upload_item.php" method="POST" enctype="multipart/form-data">
+      <label>Title:</label>
+      <input type="text" name="title" required>
+
+      <label>Description:</label>
+      <textarea name="description" rows="4"></textarea>
+
+      <label>Category:</label>
+      <input type="text" name="category">
+
+      <label>Type:</label>
+      <input type="text" name="type">
+
+      <label>Size:</label>
+      <input type="text" name="size">
+
+      <label>Condition:</label>
+      <input type="text" name="condition">
+
+      <label>Tags (comma-separated):</label>
+      <input type="text" name="tags">
+
+      <label>Image:</label>
+      <input type="file" name="image" required>
+
+    <button type="button" onclick="location.href='home.html'">Upload Item</button>
+
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ReWear Community | Built for a sustainable tomorrow</p>
+  </footer>
+
+</body>
+</html>

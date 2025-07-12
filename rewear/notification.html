@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications - ReWear</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f5f9fc;
+  color: #333;
+  line-height: 1.6;
+  padding: 0;
+}
+
+/* Header styling */
+header {
+  background-color: #62a8ac;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #e0e0e0;
+}
+
+/* Main content */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+main h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #444;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+/* Notification list */
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  background-color: #eef4f7;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-left: 5px solid #62a8ac;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+ul li:hover {
+  background-color: #dceef2;
+}
+
+/* Footer */
+footer {
+  background-color: #62a8ac;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  main {
+    margin: 20px;
+    padding: 15px;
+  }
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>🔔 Notifications</h1>
+        <nav>
+            <a href="home.html">Dashboard</a>
+            <a href="profile.html">My Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Recent Activity</h2>
+        <ul>
+            <li>You received a swap request for "Blue Shirt".</li>
+            <li>Your item "Denim Jeans" was approved.</li>
+            <li>Admin sent an update: “New feature coming soon!”</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy;  2025 ReWear | Built for a sustainable tomorrow</p>
+    </footer>
+</body>
+</html>

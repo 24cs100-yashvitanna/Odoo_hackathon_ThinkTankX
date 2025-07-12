@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ReWear – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f5f9fc;
+      color: #333;
+    }
+
+    /* Header */
+    .header {
+      background-color: #62a8ac;
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .search-box {
+      flex: 1;
+      margin: 10px 20px;
+      display: flex;
+      min-width: 250px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .search-box button {
+      background-color: #4d8b8e;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 0 6px 6px 0;
+      color: white;
+      cursor: pointer;
+    }
+
+    .header-icons a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .promo-text {
+      margin: 40px 0 20px;
+    }
+
+    .promo-text h1 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .promo-btns .btn {
+      background-color: #62a8ac;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: background 0.3s ease;
+    }
+
+    .promo-btns .btn:hover {
+      background-color: #4d8b8e;
+    }
+
+    /* Category Scroll */
+    .category-scroll {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .category-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-item {
+       flex: 0 0 auto;
+       width: 100px;
+       text-align: center;
+       background: #fff;
+       border-radius: 10px;
+       padding: 16px 10px;
+       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+       display: flex;
+       align-items: center;
+      justify-content: center;
+     }
+
+
+  .category-item span {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Product Section */
+    .product-grid {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-grid h2 {
+      margin-bottom: 25px;
+      font-size: 24px;
+      text-align: center;
+      color: #333;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .btn-group {
+      margin-top: 10px;
+    }
+
+    .btn-group .btn {
+      background-color: #62a8ac;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-group .btn:hover {
+      background-color: #4d8b8e;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #4d8b8e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 8px 8px 0 0;
+      font-size: 0.95rem;
+    }
+    .category-scroll {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px;
+}
+
+.category-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.category-item {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.category-item:hover {
+  transform: scale(1.05);
+  background-color: #e8f6f8;
+}
+
+.category-item span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">👚 ReWear</div>
+    <div class="search-box">
+      <input type="text" placeholder="Search for clothes..." />
+      <button><i class="fa fa-search"></i></button>
+    </div>
+    <div class="header-icons">
+      <a href="login.html"><i class="fa fa-user"></i> log in</a>
+      <!--<a href="#"><i class="fa fa-shopping-cart"></i> Exchange Cart</a>-->
+    </div>
+  </header>
+
+  <!-- Navigation -->
+
+  <center><div class="promo-text">
+    <h1>Give Your Clothes a Second Life</h1>
+  </div></center>
+
+  <!-- === CATEGORY SLIDER INSIDE BANNER === -->
+ <!-- === CATEGORY SCROLLER WITHOUT ICONS === -->
+<section style="margin: 40px auto; max-width: 90%;">
+  <div class="category-scroll" id="categoryBar">
+    <div class="category-item">
+      <span>Men</span>
+    </div>
+    <div class="category-item">
+      <span>Women</span>
+    </div>
+    <div class="category-item">
+      <span>Kids</span>
+    </div>
+    <div class="category-item">
+      <span>Fashion</span>
+    </div>
+    <div class="category-item">
+      <span>Summer</span>
+    </div>
+    <div class="category-item">
+      <span>Winter</span>
+    </div>
+    <div class="category-item">
+      <span>Formal</span>
+    </div>
+    <div class="category-item">
+      <span>Casual</span>
+    </div>
+    <div class="category-item">
+      <span>Party Wear</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- === SCROLL JS === -->
+<script>
+  const catBar = document.getElementById('categoryBar');
+  document.querySelector('.scroll-btn.right').onclick = () => {
+    catBar.scrollBy({ left: 200, behavior: 'smooth' });
+  };
+  document.querySelector('.scroll-btn.left').onclick = () => {
+    catBar.scrollBy({ left: -200, behavior: 'smooth' });
+  };
+</script>
+
+
+
+  <!-- Items Grid -->
+  <section class="product-grid">
+    <h2>Featured Exchangable Items</h2>
+    <div class="products">
+      <!-- Product -->
+      <div class="product-card">
+        <img src="men1.png" alt="Shirt">
+        <h3>Men’s Shirt</h3>
+        <p>Size: M | Condition: Good</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=1" class="btn">Exchange</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <img src="men2.png" alt="Tshirt">
+        <h3>Men’s T-Shirt</h3>
+        <p>Size: L | Condition: Like New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=2" class="btn">Exchange</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="men3.png" alt="Jeans">
+        <h3>Men’s Jeans</h3>
+        <p>Size: L | Condition: Like New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=3" class="btn">Exchange</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <img src="men4.png" alt="Jeans">
+        <h3>Men’s Jeans</h3>
+        <p>Size: XS | Condition: New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=4" class="btn">Exchange</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="product-grid">
+    <div class="products">
+      <!-- Product -->
+      <div class="product-card">
+        <img src="men5.png" alt="Blezer">
+        <h3>Men’s Blezer</h3>
+        <p>Size: M | Condition: Good</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=5" class="btn">Exchange</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <img src="men6.png" alt="Casual">
+        <h3>Men’s Casual</h3>
+        <p>Size: L | Condition: Like New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=6" class="btn">Exchange</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="women1.png" alt="Dress">
+        <h3>women’s Dress</h3>
+        <p>Size: L | Condition: Like New</p>
+        <div class="btn-group">
+          <a href="item-listing.html" class="btn">Exchange</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <img src="Women2.png" alt="Dress">
+        <h3>Women's Dress</h3>
+        <p>Size: XS | Condition: New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=8" class="btn">Exchange</a>
+        </div>
+      </div>
+    </div>
+    </section>
+    <section class="product-grid">
+    <div class="products">
+      
+      <div class="product-card">
+        <img src="women3.png" alt="Formal">
+        <h3>Women's Formal</h3>
+        <p>Size: M | Condition: Good</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=9" class="btn">Exchange</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <img src="women4.png" alt="Jeans">
+        <h3>women’s Jeans</h3>
+        <p>Size: L | Condition: Like New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=10" class="btn">Exchange</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="women5.png" alt="Jeans">
+        <h3>women’s Jeans</h3>
+        <p>Size: L | Condition: Like New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=11" class="btn">Exchange</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <img src="women6.png" alt="Tshirt">
+        <h3>Women's Tshirt</h3>
+        <p>Size: XS | Condition: New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=12" class="btn">Exchange</a>
+        </div>
+      </div>
+    </div>
+    </section>
+    <section class="product-grid">
+    <div class="products">
+      <div class="product-card">
+        <img src="women7.png" alt="Blezer">
+        <h3>Women’s Blezer</h3>
+        <p>Size: M | Condition: Good</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=13" class="btn">Exchange</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <img src="child1.png" alt="pair">
+        <h3>Children's Wear</h3>
+        <p>Size: s | Condition: Like New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=14" class="btn">Exchange</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="child2.png" alt="pair">
+        <h3>Children's Wear</h3>
+        <p>Size: s | Condition: Like New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=15" class="btn">Exchange</a>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <img src="child3.png" alt="pair">
+        <h3>Children's Wear</h3>
+        <p>Size: XS | Condition: New</p>
+        <div class="btn-group">
+          <a href="item-detail.php?id=16" class="btn">Exchange</a>
+        </div>
+      </div>
+    </div>
+    </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 ReWear | Built for a sustainable tomorrow</p>
+  </footer>
+</body>
+<script>
+  const catScroll = document.getElementById("categoryBar");
+  document.querySelector(".scroll-btn.right").onclick = () => {
+    catScroll.scrollBy({ left: 150, behavior: 'smooth' });
+  };
+  document.querySelector(".scroll-btn.left").onclick = () => {
+    catScroll.scrollBy({ left: -150, behavior: 'smooth' });
+  };
+</script>
+
+</html>

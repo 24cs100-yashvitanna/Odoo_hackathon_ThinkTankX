@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ReWear – Product Detail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f5f9fc;
+      color: #333;
+    }
+
+    /* HEADER */
+    .wireframe-header {
+      background-color: #62afac;
+      padding: 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin: 20px;
+    }
+
+    .logo {
+      font-size: 50pxpx;
+      font-weight: bold;
+    }
+
+    /* SEARCH BAR */
+    .search-box {
+      flex: 1;
+      margin: 10px 30px;
+      display: flex;
+      min-width: 250px;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px 0 0 6px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .search-box button {
+      background-color: #4d8b8e;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 0 6px 6px 0;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* NAV LINKS */
+    .nav-links a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN PRODUCT SECTION */
+    .product-container {
+      max-width: 1150px;
+      margin: 50px auto 40px auto;
+      padding: 20px;
+      display: flex;
+      gap: 40px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    .left-image {
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .left-image img {
+      height: 350px;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+    }
+
+    .right-section {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .right-details h1 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #2d3436;
+    }
+
+    .right-details p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .specs {
+      margin-top: 15px;
+      font-size: 15px;
+    }
+
+    .specs span {
+      display: inline-block;
+      background: #dfe6e9;
+      color: #2d3436;
+      padding: 5px 10px;
+      margin: 5px 5px 0 0;
+      border-radius: 6px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #62a8ac;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+  
+    }
+
+    button:hover {
+      background-color: #4d8b8e;
+    }
+
+    /* GALLERY */
+    .related-images {
+      max-width: 1150px;
+      margin: 20px auto 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .related-images h2 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #1e1e1e;
+    }
+
+    .image-gallery {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .image-gallery img {
+      width: 180px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      transition: transform 0.2s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: #4d8b8e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 8px 8px 0 0;
+      font-size: 0.95rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .product-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+      }
+
+      .search-box {
+        display: none;
+      }
+
+      .related-images h2 {
+        text-align: center;
+      }
+
+      .image-gallery {
+        justify-content: center;
+      }
+
+      .nav-links {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      
+     h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="wireframe-header">
+    <h1 class="logo">👚 ReWear</h1>
+    <form class="search-box">
+      <input type="text" placeholder="Search items..." />
+      <button type="submit">Go</button>
+    </form>
+    <div class="nav-links">
+      <a href="#">Logout</a>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <div class="product-container">
+    <div class="left-image">
+      <img src="dress2.jpg" alt="Main Product">
+    </div>
+    <div class="right-section">
+      <div class="right-details">
+        <h1>Women's Floral Summer Dress</h1>
+        <p>
+          A soft cotton floral printed dress perfect for summer outings.
+          Comfortable fit with beautiful pastel tones and knee-length design.
+        </p>
+        <div class="specs">
+          <span>Size: M</span><br>
+          <span>Condition: Gently Used</span><br>
+          <span>Category: Casual</span><br>
+          <span>Color: Peach Floral</span><br>
+          <span>Material: Cotton</span><br>
+        </div>
+      </div>
+    <div class="buttons">
+  <a href="upload.html" class="swap" style="text-decoration: none;">
+    <button class="swap">Request Swap</button>
+  </a>
+</div>
+
+    </div>
+  </div>
+
+  <!-- Additional Images -->
+  <div class="related-images">
+    <h2>Available Items You Can Explore</h2>
+    <div class="image-gallery">
+      <img src="dress1.jpg" alt="View 1">
+      <img src="dress5.jpg" alt="View 2">
+      <img src="dress.jpg" alt="View 3">
+      <img src="dress3.jpg" alt="View 4">
+      <img src="dress4.jpg" alt="View 5">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy;  2025 ReWear | Built for a sustainable tomorrow
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel - ReWear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f5f9fc;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: #62a8ac;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      background: white;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background-color: #62a8ac;
+      color: white;
+    }
+
+    button {
+      padding: 6px 12px;
+      margin-right: 5px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .approve { background-color: #28a745; color: white; }
+    .reject { background-color: #dc3545; color: white; }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>🛠 Admin Panel - ReWear</h1>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="data.html">Approved Items</a>
+      <a href="upload.html">Upload</a>
+    </div>
+  </header>
+
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="adminTable"></tbody>
+    </table>
+  </main>
+
+  <script>
+    const table = document.getElementById("adminTable");
+    let items = JSON.parse(localStorage.getItem("rewearItems")) || [];
+
+    function renderTable() {
+      table.innerHTML = "";
+
+      items.forEach((item, index) => {
+        table.innerHTML += `
+          <tr>
+            <td><img src="${item.image}" width="70"/></td>
+            <td>${item.title}</td>
+            <td>${item.category}</td>
+            <td>${item.description}</td>
+            <td>
+              <button class="approve" onclick="approveItem(${index})">Approve</button>
+              <button class="reject" onclick="rejectItem(${index})">Reject</button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    function approveItem(i) {
+      items[i].approved = true;
+      localStorage.setItem("rewearItems", JSON.stringify(items));
+      alert("Item approved.");
+      renderTable();
+    }
+
+    function rejectItem(i) {
+      items.splice(i, 1);
+      localStorage.setItem("rewearItems", JSON.stringify(items));
+      alert("Item rejected and removed.");
+      renderTable();
+    }
+
+    renderTable();
+  </script>
+</body>
+</html>
