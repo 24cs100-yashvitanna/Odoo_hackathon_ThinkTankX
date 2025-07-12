@@ -85,6 +85,17 @@
       background-color: #4d8b8e;
     }
 
+    .preview {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .preview img {
+      max-width: 120px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
     footer {
       margin-top: 40px;
       text-align: center;
@@ -100,7 +111,7 @@
   </header>
 
   <main>
-    <form action="upload_item.php" method="POST" enctype="multipart/form-data">
+    <form id="uploadForm">
       <label>Title:</label>
       <input type="text" name="title" required>
 
@@ -123,16 +134,72 @@
       <input type="text" name="tags">
 
       <label>Image:</label>
-      <input type="file" name="image" required>
+      <input type="file" name="image" accept="image/*" required>
 
-    <button type="button" onclick="location.href='home.html'">Upload Item</button>
+      <div class="preview" id="preview"></div>
 
+      <button type="button">Upload Item</button>
     </form>
   </main>
 
   <footer>
     <p>&copy; 2025 ReWear Community | Built for a sustainable tomorrow</p>
   </footer>
+
+  <script>
+    const form = document.getElementById("uploadForm");
+    const button = form.querySelector("button");
+    const fileInput = form.querySelector("input[name='image']");
+    const preview = document.getElementById("preview");
+
+    let imageData = "";
+
+    fileInput.addEventListener("change", function () {
+      const file = fileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          imageData = e.target.result;
+          preview.innerHTML = `<img src="${imageData}" alt="Preview">`;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    button.addEventListener("click", function () {
+      const title = form.title.value.trim();
+      const description = form.description.value.trim();
+      const category = form.category.value.trim();
+      const type = form.type.value.trim();
+      const size = form.size.value.trim();
+      const condition = form.condition.value.trim();
+      const tags = form.tags.value.trim();
+
+      if (!title || !imageData) {
+        alert("Please fill in the title and select an image.");
+        return;
+      }
+
+      const newItem = {
+        title,
+        description,
+        category,
+        type,
+        size,
+        condition,
+        tags,
+        image: imageData,
+        approved: false
+      };
+
+      let items = JSON.parse(localStorage.getItem("rewearItems")) || [];
+      items.push(newItem);
+      localStorage.setItem("rewearItems", JSON.stringify(items));
+
+      alert("✅ Item uploaded successfully!");
+      window.location.href = "home.html";
+    });
+  </script>
 
 </body>
 </html>
