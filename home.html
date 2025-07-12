@@ -191,6 +191,45 @@
       border-radius: 8px 8px 0 0;
       font-size: 0.95rem;
     }
+    .category-scroll {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px;
+}
+
+.category-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.category-item {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.category-item:hover {
+  transform: scale(1.05);
+  background-color: #e8f6f8;
+}
+
+.category-item span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
   </style>
 </head>
 <body>
@@ -203,13 +242,18 @@
     </div>
     <div class="header-icons">
       <a href="dashboard.php"><i class="fa fa-user"></i> Account</a>
+      <!--<a href="#"><i class="fa fa-shopping-cart"></i> Exchange Cart</a>-->
     </div>
   </header>
+
+  <!-- Navigation -->
 
   <center><div class="promo-text">
     <h1>Give Your Clothes a Second Life</h1>
   </div></center>
 
+  <!-- === CATEGORY SLIDER INSIDE BANNER === -->
+ <!-- === CATEGORY SCROLLER WITHOUT ICONS === -->
 <section style="margin: 40px auto; max-width: 90%;">
   <div class="category-scroll" id="categoryBar">
     <div class="category-item">
@@ -242,6 +286,7 @@
   </div>
 </section>
 
+
 <!-- === SCROLL JS === -->
 <script>
   const catBar = document.getElementById('categoryBar');
@@ -253,7 +298,9 @@
   };
 </script>
 
- <!-- Items Grid -->
+
+
+  <!-- Items Grid -->
   <section class="product-grid">
     <h2>Featured Exchangable Items</h2>
     <div class="products">
@@ -319,7 +366,7 @@
         <h3>women’s Dress</h3>
         <p>Size: L | Condition: Like New</p>
         <div class="btn-group">
-          <a href="item-detail.php?id=7" class="btn">Exchange</a>
+          <a href="item-listing.html" class="btn">Exchange</a>
         </div>
       </div>
       
